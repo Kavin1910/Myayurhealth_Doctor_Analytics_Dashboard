@@ -108,6 +108,6 @@ def update_dashboard(selected_doctors, start_date, end_date):
 
 # Run the app
 if __name__ == "__main__":
-    # Bind to port 80 for Render's server
-    app.run_server(debug=True, host="0.0.0.0", port=80)
+    port = int(os.environ.get("PORT", 5000))  # Get the port from the environment variable (default to 5000)
+    app.run_server(debug=True, host="0.0.0.0", port=port)
 
